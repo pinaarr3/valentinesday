@@ -58,6 +58,29 @@
         <p class="heart">💖💘💝</p>
         <a href="#" class="button" id="sendLove">Send Love</a>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("UMKzyEs86IPiybeOu"); // Replace with your EmailJS User ID
+        })();
+
+        document.getElementById("sendLove").addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            emailjs.send("service_i4ti1gr", "template_v7l6xpd", {
+                message: "Someone clicked 'Send Love'! ❤️",
+                to_email: "pinaarr3@gmail.com"
+            }).then(function(response) {
+                alert("Love sent successfully! ❤️");
+            }, function(error) {
+                alert("Failed to send love. Try again! 😢");
+            });
+        });
+    </script>
+</body>
+</html>
+<!--
     <script>
         document.getElementById("sendLove").addEventListener("click", function(event) {
             event.preventDefault(); // Prevents the default link behavior
@@ -66,3 +89,4 @@
     </script>
 </body>
 </html>
+-->
